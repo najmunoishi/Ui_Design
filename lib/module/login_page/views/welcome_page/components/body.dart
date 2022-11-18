@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_design/module/login_page/constants.dart';
 import 'package:ui_design/module/login_page/views/components/round_button.dart';
+import 'package:ui_design/module/login_page/views/login_page/login_page.dart';
+import 'package:ui_design/module/login_page/views/signup_page/signup_page.dart';
 import 'package:ui_design/module/login_page/views/welcome_page/components/background.dart';
 
 class Body extends StatelessWidget {
+  const Body({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -14,9 +18,9 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "WELCOME TO EDU",
-              style: TextStyle(fontWeight: FontWeight.bold),
+            const Text(
+              "Welcome Screen",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: size.height * 0.05),
             SvgPicture.asset(
@@ -27,14 +31,14 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "LOGIN",
               press: () {
-                /*Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginScreen();
+                      return const LoginScreen();
                     },
                   ),
-                );*/
+                );
               },
             ),
             RoundedButton(
@@ -42,14 +46,14 @@ class Body extends StatelessWidget {
               color: kPrimaryLightColor,
               textColor: Colors.black,
               press: () {
-                /*Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SignUpScreen();
+                      return const SignupScreen();
                     },
                   ),
-                );*/
+                );
               },
             ),
           ],
